@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,13 @@ import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 })
 export class AppComponent {
   title = 'angtest and new';
-  private url = 'https://xlogo.inf.ethz.ch/test/ville/#/ville'
-  //private url = 'http://localhost:3000/#/ville'
+  private url = 'https://xlogo.inf.ethz.ch/test/ville/#/ville-midi?exercise=4a'
+  //private url = 'http://localhost:3000/#/ville/midi/4a'
   safeUrl: SafeUrl;
   ratio = 0.8
 
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer, private _snackBar: MatSnackBar) {
     this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
   }
 
@@ -41,8 +42,21 @@ export class AppComponent {
   }
 
   receiveMessage: any = (event: MessageEvent) => {
-    console.log("TADAAA");
-    console.log(event);
-    console.log('You reached me');
+    event.preventDefault();
+    console.log("receive message: " + event);
+    if(event.data == "correct"){
+      //Toast notification on the host application
+      this._snackBar.open("Student solved exercise correctly", "", {duration: 10000})
+    }else if(event.data == "wrong"){
+      this._snackBar.open("Student solved exercise wrong", "", {duration: 10000})
+    }
+
+    // let message = "Received message."
+    // message += " origin: " + event.origin;
+    // message += " data: " + event.data
+    // if (event.origin != "http://localhost:4200") {
+    //   this._snackBar.open(message, "Info", {duration: 10000})
+    // }
+
   };
 }

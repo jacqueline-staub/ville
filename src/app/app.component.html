@@ -1,15 +1,21 @@
-<iframe [src]="cleanUrl()" style="width:1920px; height:1400px;-moz-transform: scale(0.8, 0.8);
-  -webkit-transform: scale(0.8, 0.8);
-  -o-transform: scale(0.8, 0.8);
-  -ms-transform: scale(0.8, 0.8);
+<div class="center">
+  <h1>Ville</h1>
+
+  <div class="ville">
+    <iframe [src]="cleanUrl()" style="width:1920px; height:1400px;-moz-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
   transform: scale(0.8, 0.8);
   -moz-transform-origin: top left;
   -webkit-transform-origin: top left;
   -o-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;"
-id ="xlogo">
-  <p>Your browser does not support iframes.</p>
-</iframe>
-Exercise to load: <input type="text" [formControl]="exerciseToLoad">
-<button (click)="callVille()">Call</button>
+            id="xlogo">
+      <p>Your browser does not support iframes.</p>
+    </iframe>
+  </div>
+  Exercise to load: <input type="text" [formControl]="exerciseToLoad">
+  <button (click)="callVille()">Call</button>
+</div>

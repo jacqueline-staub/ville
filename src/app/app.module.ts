@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NewsComponent } from './news/news.component';
 import {createCustomElement} from "@angular/elements";
 import {ReactiveFormsModule} from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {ReactiveFormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent, NewsComponent]
