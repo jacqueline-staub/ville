@@ -43,9 +43,10 @@ export class AppComponent {
 
   receiveMessage: any = (event: MessageEvent) => {
     event.preventDefault();
-    console.log("receive message: " + event);
+    console.log(" Angtest: receive message: " + event);
     if(event.data == "correct"){
       //Toast notification on the host application
+      console.log(" Angtest origin: " + event.origin)
       this._snackBar.open("Student solved exercise correctly", "", {duration: 10000})
     }else if(event.data == "wrong"){
       this._snackBar.open("Student solved exercise wrong", "", {duration: 10000})
