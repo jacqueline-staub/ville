@@ -31,7 +31,7 @@ export class AppComponent {
     var childWindow = document.getElementById("xlogo");
 
     // @ts-ignore
-    document.getElementById('xlogo').contentWindow.postMessage(this.exerciseToLoad.value, this.url)
+    document.getElementById('xlogo').contentWindow.postMessage("angtest message: " + this.exerciseToLoad.value, this.url)
   }
 
   ngOnInit(): void {
