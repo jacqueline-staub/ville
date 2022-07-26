@@ -10,8 +10,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class AppComponent {
   title = 'angtest and new';
-  // private url = 'https://xlogo.inf.ethz.ch/test/ville/#/ville-midi?exercise=4a'
-  private url = 'http://localhost:3000/#/ville-midi?exercise=4a'
+  private url = 'https://xlogo.inf.ethz.ch/test/ville/#/ville-midi?exercise=4a'
+  // private url = 'http://localhost:3000/#/ville-midi?exercise=4a'
   safeUrl: SafeUrl;
   messageLog: String = "-------- Angtest - Message log: --------------- \n"
   ratio = 0.8
