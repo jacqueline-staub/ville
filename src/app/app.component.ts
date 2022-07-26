@@ -32,7 +32,7 @@ export class AppComponent {
     var childWindow = document.getElementById("xlogo");
 
     let message = "angtest message: " + this.exerciseToLoad.value
-    this.messageLog += "Send message to xlogo: " + message;
+    this.messageLog += "Send message to xlogo: " + message + "\n";
     // @ts-ignore
     document.getElementById('xlogo').contentWindow.postMessage("angtest message: " + this.exerciseToLoad.value, this.url)
   }
