@@ -10,8 +10,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class AppComponent {
   title = 'angtest and new';
-  private url = 'https://xlogo.inf.ethz.ch/test/ville/#/ville-midi?exercise=4a'
-  //private url = 'http://localhost:3000/#/ville/midi/4a'
+  // private url = 'https://xlogo.inf.ethz.ch/test/ville/#/ville-midi?exercise=4a'
+  private url = 'http://localhost:3000/#/ville-midi?exercise=4a'
   safeUrl: SafeUrl;
   messageLog: String = "-------- Angtest - Message log: --------------- \n"
   ratio = 0.8
@@ -31,8 +31,8 @@ export class AppComponent {
     console.log(this.exerciseToLoad.value)
     var childWindow = document.getElementById("xlogo");
 
-    let message = "angtest message: " + this.exerciseToLoad.value
-    this.messageLog += "Send message to xlogo: " + message + "\n";
+    let message = "\n angtest message: " + this.exerciseToLoad.value
+    this.messageLog += "\n Send message to xlogo: " + message + "  |||||  ";
     // @ts-ignore
     document.getElementById('xlogo').contentWindow.postMessage("angtest message: " + this.exerciseToLoad.value, this.url)
   }
@@ -48,6 +48,8 @@ export class AppComponent {
     console.log("Angtest: Receive message from : " );
     console.log("Angtest: Origin: " + event.origin);
     console.log("Angtest: data: " + event.data);
+    this.messageLog += "\n Receive message from : " + event.origin + ". and data: " + event.data +  "  |||||  ";
+
     if(event.data == "correct"){
       //Toast notification on the host application
       console.log(" Angtest origin: " + event.origin)
