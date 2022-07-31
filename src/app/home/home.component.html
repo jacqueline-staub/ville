@@ -1,0 +1,7 @@
+<router-outlet>
+  <ul>
+    <li *ngFor="let exercise of exercises">
+      <a [routerLink]="['/exercise']" [queryParams]="{'exercise': exercise}"> {{exercise}} </a>
+    </li>
+  </ul>
+</router-outlet>
