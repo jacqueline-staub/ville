@@ -14,10 +14,10 @@ export class ExerciseComponent implements OnInit {
   exercise_id: string = "";
   title = 'Testing postMessage API with xlogoOnline';
 
-  // baseUrl = 'https://xlogo.inf.ethz.ch/test/ville/#/ville-midi?exercise='
-  // postMessageUrl = 'https://xlogo.inf.ethz.ch'
-  baseUrl = 'http://localhost:3000/#/ville-midi?exercise='
-  postMessageUrl = 'http://localhost:3000'
+  baseUrl = 'https://xlogo.inf.ethz.ch/test/ville/#/ville-midi?exercise='
+  postMessageUrl = 'https://xlogo.inf.ethz.ch'
+  // baseUrl = 'http://localhost:3000/#/ville-midi?exercise='
+  // postMessageUrl = 'http://localhost:3000'
   safeUrl: SafeUrl;
 
   // Only for debugging
